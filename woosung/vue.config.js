@@ -1,19 +1,21 @@
 /* vue.config.js */
 const path = require('path');
-const PrerenderSpaPlugin = require('prerender-spa-plugin');
 
+const PrerenderSpaPlugin = require('prerender-spa-plugin');
 const productionPlugins = [
   new PrerenderSpaPlugin({
     staticDir: path.join(__dirname, 'dist'),
     routes: [
         "/",
         "/about",
+        '/product'
     ],
     renderer: new PrerenderSpaPlugin.PuppeteerRenderer({
       renderAfterElementExists: '#app'
     }),
   }),
 ];
+
 
 module.exports = {
   lintOnSave: false,
@@ -28,7 +30,7 @@ module.exports = {
     prerenderSpa: {
       registry: undefined,
       renderRoutes: [
-        '/', '/about',
+        '/', '/about','/product'
       ],
       useRenderEvent: true,
       headless: true,
