@@ -105,6 +105,16 @@
     import ProBanner from '@/components/banner/banner-pro'
     import Contact from '@/components/common/contact.vue'
     export default {
+    metaInfo(){
+      return{
+        title:'우성소프트',
+        // titleTemplate: `%s | ${123}`, // title 뒤에 붙일 공통된 이름 (주로 사이트이름) 
+        meta:[
+          {name: 'description', content:'우성소프트 Win-Win Pro 농어민 판매대장, 독성별 판매대장, 농약혼용표 관리, pls 판매 재고 '},
+          {name: 'keyword', content:'PLS, pls 판매기록, 우성소프트, 우성컴퓨터, 지도, 작물보호제, 기업 역량, 회사 연혁 win-win pro, 윈윈 프로'}
+        ],
+      }
+    },
         components: {
             Carousel,
             Slide,
