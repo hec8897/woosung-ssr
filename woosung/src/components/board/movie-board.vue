@@ -112,61 +112,30 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/define.scss';
+@import './common.scss';
 
-ul.nav{
-    margin: 5px 0px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #d0d0d0;
-
+section.movie{
     
-    li{
-        cursor: pointer;
-        display: inline-block;
-        transition: 0.1s ease-in-out;
-        padding: 10px 20px 0px 20px;
-        transition: .1s ease-in-out;
-        &.active{
-            font-weight: bold;
-            border: 1px solid #d0d0d0;
-            border-radius: 5px 5px 0px 0px;
-            border-bottom: 2px solid #fff;
-            position: relative;
-            top: 1px;
-            @media (max-width:1024px) {
-                border: 0px;
-            }
+    ul.content{
+        @media (max-width:767px) {
+            margin-top: 50px;
         }
-    }
-}
-
-    section.movie{
-        h2{
-            margin-bottom: 30px;
-            span.sub_tit{
-                font-style: 1rem!important;
-                }
+        li{
+            border-bottom: 1px solid #d0d0d0;;
+            padding: 20px 0px;
+            @media (max-width:767px) {
+                text-align: center;
             }
-        ul.content{
-                @media (max-width:767px) {
-                    margin-top: 50px;
-                }
-                li{
-                    border-bottom: 1px solid #d0d0d0;;
-                    padding: 20px 0px;
-                    @media (max-width:767px) {
-                        text-align: center;
-                    }
-                    &:nth-child(1){
-                        border-top: 1px solid #d0d0d0;
-                    }
-                    &>div{
-                        vertical-align: middle;
-                    }
-                    &.none{
-                        padding: 50px 0px;
-                    }
-                    div.thumbnail{
+            &:nth-child(1){
+                border-top: 1px solid #d0d0d0;
+            }
+            &>div{
+                vertical-align: middle;
+            }
+            &.none{
+                padding: 50px 0px;
+            }
+            div.thumbnail{
                         width: 320px;
                         height: 200px;
                         background-color: $lightgray;

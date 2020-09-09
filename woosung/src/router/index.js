@@ -55,9 +55,19 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/infomation.vue'),
     children:[
       {
+        path:'/',
+        name:'info-movie',
+        component: () => import(/* webpackChunkName: "about" */ '../components/board/movie-board.vue'),
+      },
+      {
         path:'info3',
         name:'info-movie',
         component: () => import(/* webpackChunkName: "about" */ '../components/board/movie-board.vue'),
+      },
+      {
+        path:'info4',
+        name:'info-material',
+        component: () => import(/* webpackChunkName: "about" */ '../components/board/material-board.vue'),
       }
     ]
   }
