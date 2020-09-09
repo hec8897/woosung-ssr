@@ -8,7 +8,9 @@ const productionPlugins = [
     routes: [
         "/",
         "/about",
-        '/product'
+        '/product',
+        '/product/pro',
+
     ],
     renderer: new PrerenderSpaPlugin.PuppeteerRenderer({
       renderAfterElementExists: '#app'
@@ -30,7 +32,10 @@ module.exports = {
     prerenderSpa: {
       registry: undefined,
       renderRoutes: [
-        '/', '/about','/product'
+        '/', 
+        '/about',
+        '/product',
+        '/product/pro',
       ],
       useRenderEvent: true,
       headless: true,

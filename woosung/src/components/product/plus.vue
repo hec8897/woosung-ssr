@@ -1,13 +1,272 @@
 <template>
-    <div class='pro'>
+    <div class='plus'>
         <ProBanner product='plus'/>
+        <section class='section1 wrap'>
+            <h2>Win-Win Pro 결제연동은</h2>
+            <p>Win-Win Pro의 편리기능을 그대로 사용하면서 전용단말기와 전자서명 사인패드를 추가하여 결제 연동기능과 개인정보 활용 동의서, 
+            각종 계약증빙서명자료를 종이 출력없이 전자 서명으로 처리하여 안전하고 편리하게 기록관리할 수 있는 제품입니다.</p>
+        </section>
+        <section class='section2 slide'>
+            <h2>제품 주요 기능</h2>
+                <div class='s2_boxs'>
+                    <Carousel 
+                        :navigationEnabled="true"
+                        :navigationPrevLabel="prevBtn"
+                        :navigationNextLabel="nextBtn"
+                        :per-page-custom=[[1024,3],[768,2],[350,1]]
+                        paginationColor="#ffffff"
+                        >
+                        
+                        <Slide v-for="(s2Desc,i) in s2Descs" :key='i'>
+                            <div class='s2_box' v-bind:class="'s2_box'+s2Desc.no">
+                                <div class='inner'>
+                                    <h4>{{s2Desc.title}}</h4>
+                                    <img v-bind:src="require('@/assets/image/product/'+s2Desc.icon)"/>
+                                    <p>{{s2Desc.desc}}</p>
+                                </div>
+                            </div>
+                        </Slide>
+
+                    </Carousel>
+                </div>
+        </section>
+
+        <section class='section3 wrap'>
+            <figure>
+                <img src='@/assets/image/product/figure.jpg'>
+            </figure>
+            <div class='list_item'>
+            <h3>Win-Win Pro 결제 연동 제품 구성</h3>
+            <ul>
+                <li><b>A</b> Win-Win Pro 결제 연동 전용 단말기</li>
+                <li><b>B</b> 전원 케이블</li>
+                <li><b>C</b> 사용 설명서</li>
+                <li><b>D</b> USB to PC 연동 케이블</li>
+                <li><b>E</b> 서명 패드</li>
+            </ul>
+            <p>Win-Win Pro 결제 연동의 기능은 전용 결제 단말기와 싸인패드에서만 작동됩니다.  </p>
+            </div>
+        </section>
+                <section class='section4 card_two'>
+            <div class='wrap'>
+                <h2><strong>Win-Win Pro 결제 연동</strong> 만의 차별화 된 기능!</h2>
+               
+                <div class='content content2'>
+                    <img src='@/assets/image/product/pos_s3_img2.png'>
+                    <h3>판매기록과 결제를 한번에</h3>
+                    <p>결제 연동으로 판매업무를 간편하게 할 수 있으며</p>
+                    <p>별도 프린터 구매없이 영수증, 거래명세표를 출력 할 수 있습니다.</p>
+                </div>
+
+                <div class='content content1'>
+                    <img src='@/assets/image/product/pos_s3_img1.png'>
+                    <h3>개인정보이용 동의서 전자서명</h3>
+                    <p>동의 출력한다고 A4용지, 토너(잉크) 소모할 필요없이</p>
+                    <p>서명패드에 서명만 하면 개인정보이용 동의서 서명란에 자동입력!</p>
+                </div>
+                <h2 class='bot'>Win-Win Pro 결제 연동은 농자재 유통관리에 최적화 된 서비스를 제공합니다.</h2>
+            </div>
+        </section>
     </div>
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel';
 import ProBanner from '@/components/banner/banner-pro'
 export default {
-    components:{ProBanner}
+    components:{ProBanner,Carousel,Slide},
+    data(){
+        return{
+            s2Descs:[
+                {
+                    no:9,
+                    title:"결제연동",
+                    desc:"농자재 전문 판매 프로그램으로 수기식 장부 입력형식을 채택하여 누구나 쉽게 사용할 수 있습니다. 현장에 꼭 필요한 기능을 담아 사용하기에 편리합니다.",
+                    icon:"pro_s2_icon1.png"
+                },
+                {
+                    no:10,
+                    title:"전자서명기능 추가",
+                    desc:"농약품목의 경우 PLS와 매칭되어 매출장부 작성할 때 작물 입력하면 농진청전송 메뉴에서 별도 입력없이 농약안전관리시스템으로 전송할 수 있습니다.",
+                    icon:"pro_s2_icon10.png"
+
+                },
+                {
+                    no:0,
+                    title:"편안한 장부관리, 재고 관리",
+                    desc:"농자재 전문 판매 프로그램으로 수기식 장부 입력형식을 채택하여 누구나 쉽게 사용할 수 있습니다. 현장에 꼭 필요한 기능을 담아 사용하기에 편리합니다.",
+                    icon:"pro_s2_icon1.png"
+                },
+                {
+                    no:1,
+                    title:"농약판매기록 농진청 전송",
+                    desc:"농약품목의 경우 PLS와 매칭되어 매출장부 작성할 때 작물 입력하면 농진청전송 메뉴에서 별도 입력없이 농약안전관리시스템으로 전송할 수 있습니다.",
+                    icon:"pro_s2_icon2.png"
+
+                },
+                {
+                    no:2,
+                    title:"스마트폰 연동 지원",
+                    desc:"Win-Win Pro 앱을 설치하여 언제 어디서나 고객관리, 장부관리가 가능합니다. 병해충 촬영, 전자싸인, CID기능 탑재하여 편리하게 사용할 수 있습니다.",
+                    icon:"pro_s2_icon4.png"
+
+                },
+                {
+                    no:3,
+                    title:"편리한 세무신고",
+                    desc:"바로빌과 연동되어 쉽고 편하게 전자세금계산서를 발행할 수 있습니다. 매입/매출자료에서 필요한 항목만 추출하여 엑셀파일로 저장할 수 있어 증빙서 업무를 보다 편리하게 할 수 있습니다.",
+                    icon:"pro_s2_icon5.png"
+
+                },
+                {
+                    no:4,
+                    title:"제품 바코드 인식 시스템",
+                    desc:"시중 유통되는 대부분의 작물보호제 제품 바코드가 등록되어 있으며 제품 목록이 정기적으로 갱신됩니다. 개별 등록 기능으로 신규등록하여 사용할 수 있습니다.",
+                    icon:"pro_s2_icon6.png"
+
+                },
+                {
+                    no:5,
+                    title:"다양한 문서 양식 제공",
+                    desc:"견적서, 거래명세서, 납품확인서, 미수금확인서, 거래약정서 등 다양한 문서 양식 활용으로 편리한 작업환경을 제공합니다.",
+                    icon:"pro_s2_icon7.png"
+
+                },
+                {
+                    no:6,
+                    title:"데이터 추출, 가공, 분석",
+                    desc:"필요한 데이터를 추출하여 엑셀파일로 저장하거나 출력할 수 있습니다. 품목분류별 매입/매출 통계 데이터도 한 눈에 확인할 수 있습니다.",
+                    icon:"pro_s2_icon8.png"
+
+                },
+                {
+                    no:7,
+                    title:"문자 전송 기능",
+                    desc:"대용량 문자발송이 가능한 문자전송 기능을 탑재하여 고객 분별로 정보를 제공하거나 채권업무 관련 문자를 편리하게 전송할 수 있습니다.",
+                    icon:"pro_s2_icon9.png"
+
+                }
+            ]
+        }
+    },
+    metaInfo() {
+        return {
+            title: '우성소프트',
+            titleTemplate: `%s | Win-Win Pro 결제연동`, // title 뒤에 붙일 공통된 이름 (주로 사이트이름) 
+            meta: [{
+                    name: 'description',
+                    content: '우성소프트 Win-Win 포스 농자재 판매대장, 독성별 판매대장, 농약혼용표 관리, pls 판매 재고 '
+                },
+                {
+                    name: 'keyword',
+                    content: 'PLS, pls 판매기록, 우성소프트, 우성컴퓨터, 지도, 작물보호제, 기업 역량, 회사 연혁 win-win pro,win-win pos, 윈윈 프로, 윈윈 포스'
+                }
+            ],
+        }
+    },
     
 }
 </script>
+
+<style lang="scss">
+@import '@/assets/mixin.scss';
+@import './common.scss';
+
+div.plus {
+    section.section1 {
+        background-color: #fff;
+        padding-bottom: 100px;
+        h2 {
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 20px;
+            }
+        p {
+            text-align: left;
+            }
+    }
+    section.section2.slide {
+        @include ProductSlider();
+    }
+    section.section3 {
+            text-align: center;
+            figure {
+                vertical-align: top;
+                display: inline-block;
+                width: 100%;
+                max-width: 500px;
+                text-align: center;
+                margin: 0 auto;
+
+                img {
+                    width: 100%;
+
+                    @media (max-width:1024px) {
+                        width: 80%;
+                    }
+                }
+            }
+
+            div.list_item {
+                max-width: 600px;
+                vertical-align: middle;
+                display: inline-block;
+                padding-left: 40px;
+                box-sizing: border-box;
+
+                @media (max-width:1024px) {
+                    padding-left: 0px;
+                    display: block;
+                    margin: 0 auto;
+                    margin-top: 30px;
+                }
+
+                h3 {
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    font-size: 1.5rem;
+                }
+
+                ul {
+                    text-align: left;
+                    @media (max-width:1024px) {
+                        padding-left: 50px;
+                    }
+
+                    li {
+                        margin-bottom: 15px;
+
+                        b {
+                            display: inline-block;
+                            width: 25px;
+                            height: 25px;
+                            text-align: center;
+                            line-height: 25px;
+                            border-radius: 100%;
+                            background-color: #d0d0d0;
+                            margin-right: 10px;
+                        }
+
+                    }
+
+                }
+            }
+            p {
+                color: tomato;
+                font-weight: bold;
+                margin: 0px auto;
+                font-size: 0.75rem;
+                @media (max-width:1024px) {
+                }
+
+            }
+
+        
+        }
+
+    }
+    section.card_two.section4 {
+        @include CardTwo();
+    }
+</style>

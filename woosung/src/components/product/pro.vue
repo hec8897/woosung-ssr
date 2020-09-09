@@ -105,16 +105,17 @@
     import ProBanner from '@/components/banner/banner-pro'
     import Contact from '@/components/common/contact.vue'
     export default {
-    metaInfo(){
-      return{
-        title:'우성소프트',
-        // titleTemplate: `%s | ${123}`, // title 뒤에 붙일 공통된 이름 (주로 사이트이름) 
-        meta:[
-          {name: 'description', content:'우성소프트 Win-Win Pro 농어민 판매대장, 독성별 판매대장, 농약혼용표 관리, pls 판매 재고 '},
-          {name: 'keyword', content:'PLS, pls 판매기록, 우성소프트, 우성컴퓨터, 지도, 작물보호제, 기업 역량, 회사 연혁 win-win pro, 윈윈 프로'}
-        ],
-      }
-    },
+        metaInfo(){
+            return{
+                title:'우성소프트',
+                titleTemplate: `%s | Win-Win Pro`, // title 뒤에 붙일 공통된 이름 (주로 사이트이름) 
+
+                meta:[
+                    {name: 'description', content:'우성소프트 Win-Win Pro 농어민 판매대장, 독성별 판매대장, 농약혼용표 관리, pls 판매 재고 '},
+                    {name: 'keyword', content:'PLS, pls 판매기록, 우성소프트, 우성컴퓨터, 지도, 작물보호제, 기업 역량, 회사 연혁 win-win pro, 윈윈 프로'}
+                ],
+            }
+        },
         components: {
             Carousel,
             Slide,
@@ -242,112 +243,7 @@
         }
 
         section.section2.slide {
-            background-color: #f2f2f2;
-            h2 {
-                font-weight: bold;
-                text-align: center;
-                margin-bottom: 50px;
-            }
-
-            div.s2_boxs {
-                div.s2_box {
-                    height: 450px;
-                    box-sizing: border-box;
-                    background-size: cover;
-                    background-position: center;
-                    margin: 10px;
-                    text-align: center;
-                    background-size: cover;
-                    background-color: #d0d0d0;
-                    @include shadowDefault();
-
-                    @for $i from 0 through 10 {
-                        &.s2_box#{$i} {
-                            background-image: url("../../assets/image/product/pro_capture#{$i}.png");
-                        }
-                    }
-
-                    @media (max-width:1024px) {
-                        height: 300px;
-                    }
-
-                    div.inner {
-                        height: 100%;
-                        position: relative;
-                        transition: .3s ease-in-out;
-                        padding: 50px;
-                        box-sizing: border-box;
-                        color: #f0f0f0;
-                        background-color: rgba($color: #444, $alpha: 0.8);
-
-                        @media (max-width:1024px) {
-                            padding: 30px;
-                        }
-
-                        h4 {
-                            font-size: 1.56rem;
-                            margin-top: 10px;
-
-                            @media (max-width:1200px) {
-                                font-size: 1.25rem;
-                            }
-
-                        }
-
-                        img {
-                            width: 23%;
-                            display: block;
-                            position: absolute;
-                            left: 50%;
-                            top: 45%;
-                            transform: translate(-50%, -50%);
-                        }
-
-                        p {
-                            word-break: keep-all;
-                            width: 80%;
-                            font-size: 0.875rem;
-                            line-height: 1.5rem;
-                            position: absolute;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            bottom: 15%;
-
-                            @media (max-width:1200px) {
-                                font-size: 0.75rem;
-                            }
-                        }
-                    }
-
-                    &:hover div.inner {
-                        opacity: 0.0;
-                    }
-
-                }
-            }
-
-            .VueCarousel-navigation {
-                top: 50px;
-                z-index: 90;
-            }
-
-            .VueCarousel-navigation-button {
-                border: 1px solid #d0d0d0;
-                background-color: #fff;
-
-                &:hover {
-                    background-color: lightsteelblue;
-                }
-            }
-
-            .VueCarousel-navigation-next {
-                right: 20%;
-            }
-
-            .VueCarousel-navigation-prev {
-                left: 20%;
-            }
-
+            @include ProductSlider();
         }
 
             section.section3 {
