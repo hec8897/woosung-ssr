@@ -69,7 +69,8 @@ export default {
 </script>
 
 <style lang="scss">
-    @import '@/assets/define.scss';
+    @import '@/assets/mixin.scss';
+
 
     section.farm-movie{
         div.wrap{

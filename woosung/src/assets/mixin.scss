@@ -1,0 +1,18 @@
+$black:#444;
+$white:#fff;
+$PointColor:#4682B4;
+$redPoint:#d90125;
+$MainColor:#87CEFA;
+$lightgray:#f9fafc;
+
+@mixin shadowDefault() {
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+@mixin textOverFlow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import axios from 'axios'
 import VueMoment from 'vue-moment';
+import '@/assets/define.scss';
 
 Vue.prototype.$Axios = axios;
 Vue.use(VueMoment);
