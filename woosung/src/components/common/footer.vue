@@ -113,7 +113,7 @@ export default {
                     idx:10,
                     name:'한얼사이언스',
                     url:'http://www.hescience.co.kr/',
-                    logo:'image/footer/logo10.png'
+                    logo:'https://woosung.s3.ap-northeast-2.amazonaws.com/default/com_logo/has.png'
                 }
               ]
           }
