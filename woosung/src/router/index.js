@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import axios from 'axios'
 import VueMoment from 'vue-moment';
 import '@/assets/define.scss';
@@ -15,7 +14,8 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue')
+
   },
   {
     path: '/about',
@@ -48,6 +48,20 @@ Vue.use(VueRouter)
         component: () => import(/* webpackChunkName: "about" */ '../components/product/plus.vue'),
       }
     ]
+  },
+  {
+    path:'/information',
+    name:'infomation',
+    component: () => import(/* webpackChunkName: "about" */ '../views/infomation.vue'),
+    children:[
+      {
+        path:'info3',
+        name:'info-movie',
+        component: () => import(/* webpackChunkName: "about" */ '../components/board/movie-board.vue'),
+
+      }
+    ]
+
   }
 ]
 
