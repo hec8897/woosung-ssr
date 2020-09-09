@@ -18,7 +18,7 @@
                 <p v-if="product == 'pos'" v-html="pos.desc">복잡하고 어려워진 농약판매 우성 소프트가 해결 해드리겠습니다.</p>
                 <p v-if="product == 'plus'" v-html="plus.desc">복잡하고 어려워진 농약판매 우성 소프트가 해결 해드리겠습니다.</p>
 
-                <router-link tag='div' :to="'/product/'+product" class='btn'>자세히 보기</router-link>
+                <router-link v-if="btn" tag='div' :to="'/product/'+product" class='btn'>자세히 보기</router-link>
             </div>
         </div>
     </div>
@@ -26,12 +26,7 @@
 
 <script>
 export default {
-    props:['product'],
-    computed:{
-        Mode(){
-            return this.product
-        }
-    },
+    props:['product','btn'],
     data(){
         return{
             pro:{

@@ -1,0 +1,125 @@
+@mixin Section1() {
+    text-align: center;
+    padding-bottom: 200px;
+
+    @media (max-width:767px) {
+        padding-bottom: 50px;
+    }
+
+    div.icon_box {
+        width: 18%;
+        margin: 10px;
+        max-width: 200px;
+        height: 180px;
+        display: inline-block;
+        border-radius: 5px;
+        vertical-align: middle;
+        position: relative;
+        top: 30px;
+        text-align: center;
+        opacity: 0.0;
+        @include shadowDefault();
+
+        &.active {
+            animation: fadeup .4s ease-in-out;
+            animation-fill-mode: both;
+        }
+
+        @for $i from 0 through 4 {
+            &.icon_box:nth-child(#{$i+1}) {
+                background-color: darken($color: #87CEFA, $amount: 5% * $i);
+                animation-delay: 0.2s * $i;
+            }
+        }
+
+        @media (max-width:1200px) {
+            max-width: 170px;
+            margin: 5px;
+            height: 170px;
+        }
+
+        @media (max-width:767px) {
+            width: 95%;
+            max-width: 95%;
+            margin: 5px auto;
+        }
+
+        div.inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            img {
+                width: 60%;
+                transition: 0.1s ease-in-out;
+            }
+
+            @media (max-width:767px) {
+                top: 30%;
+
+                img {
+                    width: 20%;
+                }
+            }
+
+            @media (max-width:480px) {
+                top: 30%;
+
+                img {
+                    width: 30%;
+                }
+            }
+        }
+
+        div.outer {
+            width: 100%;
+            position: absolute;
+            top: 115%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            h4 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: 0.75rem;
+                margin: 5px 0px;
+
+                @media (max-width:767px) {
+                    display: inline;
+                    font-size: 0.875rem;
+                }
+
+            }
+
+            @media (max-width:767px) {
+                width: 80%;
+                top: 65%;
+                color: white;
+            }
+
+            @media (max-width:480px) {
+                top: 55%;
+            }
+
+
+        }
+
+    }
+
+    @keyframes fadeup {
+        0% {
+            opacity: 0.0;
+            top: 30px;
+        }
+
+        100% {
+            opacity: 1.0;
+            top: 0px;
+        }
+
+    }
+
+}

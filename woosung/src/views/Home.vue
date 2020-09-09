@@ -8,9 +8,9 @@
         :autoplayTimeout="3500"
       >
           <slide><MainBanner/></slide>
-          <slide><ProBanner product='pro'/></slide>
-          <slide><ProBanner product='pos'/></slide>
-          <slide><ProBanner product='plus'/></slide>
+          <slide><ProBanner btn='true' product='pro'/></slide>
+          <slide><ProBanner btn='true' product='pos'/></slide>
+          <slide><ProBanner btn='true' product='plus'/></slide>
 
       </carousel>
     </div>
@@ -69,11 +69,10 @@ export default {
         title:'우성소프트',
         // titleTemplate: `%s | ${123}`, // title 뒤에 붙일 공통된 이름 (주로 사이트이름) 
         meta:[
-          {name: 'description', 
-          content:`PLS 판매기록 우성소프트 우성컴퓨터 농약안전관리판매기록제, 농약관리프로그램, 우성컴퓨터, 농약안전정보시스템, 
-            PLS, 농약판매인, 농약사, 작물보호제, 농약판매기록의무화, 농약판매전자기록, 농약허용물질목록관리제도, 농약허용기준강화제도, 
-            농촌진흥청, 농진청, 농약판매업, 농약판매관리, 농약재고관리, 농약판매기록, 민간재고관리, 민간재고관리프로그램, 농약민간재고관리`
-          }
+          {name:'author', content:'woosung'},
+          {name: 'keyword', content:`PLS, pls 판매기록, 우성소프트,우성컴퓨터, 농약관리, 작물보호제, 농약판매기록의무화, 농약판매전자기록, 
+          농약허용물질목록관리제도, 농약허용기준강화제도, 농촌진흥청, 농진청, 농약판매업, 농약판매관리, 농약재고관리`},
+          {name: 'description', content:`PLS 판매기록 우성소프트 우성컴퓨터, 농약안전정보시스템 연동, 농자재판매상 전용 판매관리프로그램, 포스 시스템 구축 , PLS 농약검색`}
         ],
       }
     },

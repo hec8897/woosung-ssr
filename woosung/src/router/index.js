@@ -25,7 +25,29 @@ Vue.use(VueRouter)
   {
     path: '/product',
     name: 'product',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Product.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Product.vue'),
+    children:[
+      {
+        path:'/',
+        name:'product-pro',
+        component: () => import(/* webpackChunkName: "about" */ '../components/product/pro.vue'),
+      },
+      {
+        path:'pro',
+        name:'product-pro',
+        component: () => import(/* webpackChunkName: "about" */ '../components/product/pro.vue'),
+      },
+      {
+        path:'pos',
+        name:'product-pos',
+        component: () => import(/* webpackChunkName: "about" */ '../components/product/pos.vue'),
+      },
+      {
+        path:'plus',
+        name:'product-plus',
+        component: () => import(/* webpackChunkName: "about" */ '../components/product/plus.vue'),
+      }
+    ]
   }
 ]
 
