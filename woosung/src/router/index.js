@@ -58,10 +58,8 @@ Vue.use(VueRouter)
         path:'info3',
         name:'info-movie',
         component: () => import(/* webpackChunkName: "about" */ '../components/board/movie-board.vue'),
-
       }
     ]
-
   }
 ]
 

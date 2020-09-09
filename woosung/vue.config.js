@@ -12,6 +12,7 @@ const productionPlugins = [
         '/product/pos',
         '/product/plus',
         '/product/pro',
+        '/information/info3'
 
     ],
     renderer: new PrerenderSpaPlugin.PuppeteerRenderer({
@@ -40,6 +41,7 @@ module.exports = {
         '/product/pos',
         '/product/plus',
         '/product/pro',
+        '/information/info3'
       ],
       useRenderEvent: true,
       headless: true,
