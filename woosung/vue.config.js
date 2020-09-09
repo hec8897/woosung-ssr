@@ -9,6 +9,8 @@ const productionPlugins = [
         "/",
         "/about",
         '/product',
+        '/product/pos',
+        '/product/plus',
         '/product/pro',
 
     ],
@@ -32,9 +34,11 @@ module.exports = {
     prerenderSpa: {
       registry: undefined,
       renderRoutes: [
-        '/', 
-        '/about',
+        "/",
+        "/about",
         '/product',
+        '/product/pos',
+        '/product/plus',
         '/product/pro',
       ],
       useRenderEvent: true,
