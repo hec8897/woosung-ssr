@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import axios from 'axios'
+import VueMoment from 'vue-moment';
+
+Vue.prototype.$Axios = axios;
+Vue.use(VueMoment);
+
 
 Vue.use(VueRouter)
 
