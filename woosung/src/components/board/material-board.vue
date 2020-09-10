@@ -7,7 +7,8 @@
                 @click="filterData('전체')"
                 >전체</li>
 
-                <li v-for="item in Cate"
+                <li v-for="(item,i) in Cate"
+                    :key='i'
                     @click="filterData(item)"
                     v-bind:class="{active:mode==item}"
                     >{{item}}</li>
@@ -17,6 +18,7 @@
                           <ul class='content_main'>
                         <li 
                             v-for = "(content,i) in contents" 
+                            :key='i'
                             @click="listView(content.idx,content.join)"
                             >
                             
@@ -126,83 +128,4 @@ export default {
 <style lang="scss">
 @import './common.scss';
 
-section.material{
-  ul.content_main{
-                margin-top: 50px;
-                text-align: center;
-                @media (max-width:767px) {
-                    margin-top: 30px;
-                }
-                li{
-                    cursor: pointer;
-                    display: inline-block;
-                    width: 100%;
-                    max-width: 385px;
-                    height: 400px;
-                    background-color: $lightgray;
-                    margin: 5px;
-                    vertical-align: middle;
-                    transition: .1s ease-in;
-                    border:1px solid #d0d0d0;
-                    
-                    &:hover{
-                        transform: translateY(-3px);
-                        @include shadowDefault();
-                    }
-
-                    @media (max-width:1024px) {
-                        width: 47%;
-                        margin-bottom: 10px;
-                        height: 300px;
-                    }
-                    
-                    div.img{
-                        height: 270px;
-                        overflow: hidden;
-                        background-color: #fff;
-                        img{
-                            width: auto;
-                            max-width: 100%;
-                            height: auto;
-                            max-height: 250px;
-                        }
-                        @media (max-width:1024px) {
-                            height: 180px;
-                        }
-                    }
-                    div.text{
-                        height: 130px;
-                        overflow: hidden;
-                        padding: 15px;
-                        text-align: left;
-                    }
-                    h4{
-                        box-sizing: border-box;
-                        font-weight: bold;
-                        margin: 10px 0px;
-                        @include textOverFlow();
-                    }
-                    p{
-                        font-size: 0.875rem;
-                        @include textOverFlow();
-                    }
-                    p.bottom{
-                        font-size: 0.75rem;
-                        color: #777;
-                        margin-top: 5px;
-                        span.date{
-                            float: right;
-                        }
-                    }
-                    p.date{
-                        font-size: 0.75rem;
-                        color: #777;
-                        margin-top: 5px;
-                    }
-                 
-                }
-
-            }
-}
-    
 </style>

@@ -13,8 +13,6 @@ ul.nav{
     margin: 5px 0px;
     margin-bottom: 30px;
     border-bottom: 1px solid #d0d0d0;
-
-    
     li{
         cursor: pointer;
         display: inline-block;
@@ -33,4 +31,87 @@ ul.nav{
             }
         }
     }
+}
+
+ul.content_main{
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+
+    @media (max-width:767px) {
+        margin-top: 30px;
+    }
+    li{
+        cursor: pointer;
+        // display: inline-block;
+        width: 100%;
+        max-width:32.5%;
+        height: 400px;
+        background-color: $lightgray;
+        vertical-align: middle;
+        transition: .1s ease-in;
+        border:1px solid #d0d0d0;
+        margin-bottom:12px;
+
+        
+        &:hover{
+            transform: translateY(-3px);
+            @include shadowDefault();
+        }
+
+        @media (max-width:1024px) {
+            max-width: 49%;
+            margin-bottom: 10px;
+            height: 300px;
+        }
+        
+        div.img{
+            height: 270px;
+            overflow: hidden;
+            background-color: #fff;
+            img{
+                width: auto;
+                max-width: 100%;
+                height: auto;
+                max-height: 250px;
+            }
+            @media (max-width:1024px) {
+                height: 180px;
+            }
+        }
+        div.text{
+            height: 130px;
+            overflow: hidden;
+            padding: 15px;
+            text-align: left;
+        }
+        h4{
+            box-sizing: border-box;
+            font-weight: bold;
+            margin: 10px 0px;
+            @include textOverFlow();
+        }
+        p{
+            font-size: 0.875rem;
+            @include textOverFlow();
+        }
+        p.bottom{
+            font-size: 0.75rem;
+            color: #777;
+            margin-top: 5px;
+            span.date{
+                float: right;
+            }
+        }
+        p.date{
+            font-size: 0.75rem;
+            color: #777;
+            margin-top: 5px;
+        }
+     
+    }
+
 }

@@ -7,7 +7,7 @@
                 <carousel :navigationEnabled="true" :navigationPrevLabel="prevBtn" :navigationNextLabel="nextBtn"
                     :loop='true' :per-page-custom=[[1024,4],[768,3],[540,2]]>
                     <slide v-for="(content,i) in contents" :key='i'>
-                        <div class='slide_inner' @click="popupBoxShow(i)">
+                        <div class='slide_inner' @click="popupBoxShow(content)">
                             <div>
                                 <img v-bind:src="content.thumnail" />
                             </div>
@@ -17,18 +17,16 @@
                         </div>
                     </slide>
                 </carousel>
-                <!-- <FarmPopup
-                            v-bind:show="show" 
-                            v-bind:data="popupData"
-                            @child="parent"
-                        /> -->
+                <FarmPopup v-bind:show="show" v-bind:data="popupData" @child="closePopup" />
             </div>
         </div>
     </section>
 </template>
 
 <script>
+    import FarmPopup from '@/components/modal/modal-news.vue'
     export default {
+        components:{FarmPopup},
         data() {
             return {
                 show: false,
@@ -54,6 +52,15 @@
                     this.contents = DataResult.slice(0, 8)
                 })
         },
+        methods:{
+            closePopup(data){
+                this.show = data
+            },
+            popupBoxShow(data){
+                this.show = true
+                this.popupData = data
+            },
+        }
     }
 </script>
 

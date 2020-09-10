@@ -60,6 +60,11 @@ Vue.use(VueRouter)
         component: () => import(/* webpackChunkName: "about" */ '../components/board/movie-board.vue'),
       },
       {
+        path:'info2',
+        name:'info-news',
+        component: () => import(/* webpackChunkName: "about" */ '../components/board/news-board.vue'),
+      },
+      {
         path:'info3',
         name:'info-movie',
         component: () => import(/* webpackChunkName: "about" */ '../components/board/movie-board.vue'),

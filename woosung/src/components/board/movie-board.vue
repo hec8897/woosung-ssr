@@ -13,6 +13,7 @@
                     <li
                         v-for="midCate in midCates" 
                         @click="CateFilter(midCate)"
+                        :key='midCate.idx'
                         v-bind:class="{active:mode==midCate}">
                         {{midCate}}
                     </li>
@@ -27,14 +28,15 @@
 
                     <li 
                     v-for="(filter,i) in filters" 
+                    :key='i' 
                     v-if="i < limit && i >= limit-Standard"
                     >
-                        <div class='thumbnail' @click="youtubeBoxShow(i)">
+                        <div class='thumbnail' @click="youtubeBoxShow(filter)">
                             <img v-bind:src="'https://i.ytimg.com/vi/'+filter.youtubeId+'/0.jpg'">
                             썸네일 이미지
                         </div>
                         <div class='text-box'>
-                            <h3 @click="youtubeBoxShow(i)">{{filter.title}}</h3>
+                            <h3 @click="youtubeBoxShow(filter)">{{filter.title}}</h3>
                             <p>{{filter.desc}}</p>
                             <p class='date'>게시일 : {{$moment(filter.date).format('YYYY-MM-DD')}}</p>
                         </div>
@@ -46,18 +48,19 @@
                     :standard="Standard"
                     @child="parent" />
 
-                <!--<MoviePopup 
+                <MoviePopup 
                     v-bind:show="show" 
                     v-bind:data="popupData"
-                    @child="parent"/>
+                    @child="closePopup"/>
 
     
-                <listNumber v-bind:DataLength='Math.ceil((movies.length)/10)' v-bind:nowpage='limit-10'/>-->
             </section>
 </template>
 
 <script>
+import MoviePopup from '@/components/modal/modal-movie.vue'
 export default {
+    components:{MoviePopup},
     metaInfo(){
       return{
         title:'우성소프트',
@@ -77,6 +80,9 @@ export default {
             limit:10,
             Standard:10,
             midCates:['우성소프트','농사 정보','농약 정보','농진청 유튜브','유용한 정보'],
+            show:false,
+            popupData:"",
+
         }
     },
     created() {
@@ -94,6 +100,13 @@ export default {
     methods: {
         parent(data){
             this.limit = data.page*this.Standard;
+        },
+        closePopup(data){
+            this.show = data
+        },
+        youtubeBoxShow(data){
+            this.show = true
+            this.popupData = data
         },
         CateFilter(value){
             if(value == '전체'){
