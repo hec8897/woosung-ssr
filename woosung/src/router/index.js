@@ -57,23 +57,29 @@ Vue.use(VueRouter)
       {
         path:'/',
         name:'info-movie',
-        component: () => import(/* webpackChunkName: "about" */ '../components/board/movie-board.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../components/info/movie-board.vue'),
       },
       {
         path:'info2',
         name:'info-news',
-        component: () => import(/* webpackChunkName: "about" */ '../components/board/news-board.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../components/info/news-board.vue'),
       },
       {
         path:'info3',
         name:'info-movie',
-        component: () => import(/* webpackChunkName: "about" */ '../components/board/movie-board.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../components/info/movie-board.vue'),
       },
       {
         path:'info4',
         name:'info-material',
-        component: () => import(/* webpackChunkName: "about" */ '../components/board/material-board.vue'),
-      }
+        component: () => import(/* webpackChunkName: "about" */ '../components/info/material-board.vue'),
+      },
+      {
+        path:'info4/zoom/:idx',
+        props:true,
+        name:'zoom-material',
+        component: () => import(/* webpackChunkName: "about" */ '../components/info/material-zoom.vue'),
+    }
     ]
   }
 ]
