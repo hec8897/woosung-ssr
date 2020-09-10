@@ -57,17 +57,16 @@ export default {
     watch: {
         '$route' (to, from) {
             //라우터 변동 감시
-            this.pageNumber(to.params.page)
+            // this.pageNumber(to.params.page)
+            this.pageNumber(1)
+
         },
         dataLength(){
             let Standard = Number(this.standard)
             this.prev = this.$route.params.page > 5?true:false
             this.next = this.limit < this.NumberLength?true:false
             
-            this.NumberLength = 
-            this.dataLength > 15 ?
-            Math.round(this.dataLength/Standard)+1:
-            Math.round(this.dataLength/Standard)
+            this.NumberLength = this.dataLength > 15 ? Math.round(this.dataLength/Standard)+1 : Math.round(this.dataLength/Standard)
         }
     },
 

@@ -85,6 +85,9 @@ export default {
 
         }
     },
+    watch:{
+  
+    },
     created() {
         const BaseData = "http://ec2-13-124-19-117.ap-northeast-2.compute.amazonaws.com/admin/api/youtube_data"
         this.$Axios.get(BaseData)

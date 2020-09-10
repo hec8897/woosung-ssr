@@ -81,6 +81,56 @@ Vue.use(VueRouter)
         component: () => import(/* webpackChunkName: "about" */ '../components/info/material-zoom.vue'),
     }
     ]
+  },
+  {
+    path:'/board',
+    name:'board',
+    component: () => import(/* webpackChunkName: "about" */ '../views/board.vue'),
+    children:[
+      {
+        name:'board-faq',
+        path:'/',
+        component: () => import(/* webpackChunkName: "about" */ '../components/board/faq.vue'),
+      },
+      {
+        name:'board-faq',
+        path:'faq',
+        component: () => import(/* webpackChunkName: "about" */ '../components/board/faq.vue'),
+      },
+      {
+        name:'zoom-faq',
+        props:true,
+        path:'zoomfaq/:idx',
+        component: () => import(/* webpackChunkName: "about" */ '../components/board/faq_zoom.vue'),
+      },
+      {
+        name:'board-qna',
+        path:'qna',
+        component: () => import(/* webpackChunkName: "about" */ '../components/board/qna.vue'),
+      },
+      {
+        name:'zoom-qna',
+        path:'zoomqna/:idx',
+        props:true,
+        component: () => import(/* webpackChunkName: "about" */ '../components/board/qna_zoom.vue'),
+      },
+      {
+        name:'write-qna',
+        path:'qnawrite',
+        component: () => import(/* webpackChunkName: "about" */ '../components/board/qna_write.vue'),
+      },
+      {
+        name:'board-support',
+        path:'support',
+        component: () => import(/* webpackChunkName: "about" */ '../components/board/support.vue'),
+      },
+      {
+        name:'zoom-support',
+        props:true,
+        path:'zoom/:idx',
+        component: () => import(/* webpackChunkName: "about" */ '../components/board/support_zoom.vue'),
+      }
+    ]
   }
 ]
 

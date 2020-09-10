@@ -1,0 +1,257 @@
+@import '@/assets/define.scss';
+
+table{
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    thead{
+        background-color: #f9fafc;
+        td{
+            border-top: 2px solid #444;
+        }
+    }
+    tbody{
+        tr{
+            cursor: pointer;
+            &:hover{
+                background-color: #f9f9f9;
+            }
+        }
+    }
+    tr{
+        width: 100%;
+        max-width: 100%;
+        td{
+            font-size: 0.75rem;
+            border-bottom: 1px solid #d0d0d0;
+            padding: 20px 5px;
+            @include textOverFlow();
+            
+            &:nth-child(1){
+                width: 8%;
+                text-align: center;
+            }
+
+            &:nth-child(2){
+                width: 10%;
+                color: lighten($color: #444, $amount: 20%);
+                @media (max-width:767px) {
+                    width: 35%;
+                    font-size: 0.875rem;
+                }
+            }
+            &:nth-child(3){
+                width: 60%;
+            
+                @media (max-width:767px) {
+                    width: 40%;
+                    font-size: 0.875rem;
+                }
+            }
+            &:nth-child(4){
+                width: 10%;
+                img{
+                    width: 20px;
+                }
+                @media (max-width:1024px) {
+                    width: 25%;
+                    img{
+                        width: 15px;
+                    }
+                }
+            }
+
+
+            @media (max-width:767px) {
+                width: 30%;
+                &:nth-child(1){
+                    display: none;
+                }
+                &:last-child{
+                    display: none;
+                }
+            }
+      
+         
+        }
+    }
+
+}
+
+div.zoom_table{
+    width: 100%;
+    border-top: 2px solid #999;
+    div.head{
+        padding: 20px 10px;
+        border-bottom: 1px solid #d0d0d0;
+        p{
+            margin-bottom: 20px;
+            font-size: 0.875rem;
+            color: #666;
+            span{
+                float: right;
+                font-size: 0.75rem;
+                color: #666;
+                margin-left: 15px;
+            }
+        }
+        h4{
+            font-size: 1rem;
+        }
+        h3{
+            font-weight: bolder;
+        }
+        div.type{
+            margin-top: 15px;
+            span{
+                border-right: 1px solid #d0d0d0;
+                margin-right: 10px;
+                padding-right: 10px;
+                @media (max-width:767px) {
+                    border: 0px;
+                    display: block;
+                    
+                }
+            }
+            label{
+                font-size: 0.875rem;
+                cursor: pointer;
+            }
+            input{
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 5px;
+                margin-right: 20px;
+                @media (max-width:767px) {
+                    margin-right: 10px;
+                }
+
+            }
+        }
+    }
+    div.desc{
+        padding: 50px 10px;
+        min-height: 200px;
+        color: #666;
+        border-bottom: 1px solid #d0d0d0;
+        textarea{
+            border: 0px;
+            width: 100%;
+            resize: none;
+            height: 150px;
+        }
+        img{
+            max-width: 100%;
+        }
+        p{
+            line-height: 1.9rem;
+        }
+        div.answer{
+            border-top: 1px dashed #999;
+            margin-top: 50px;
+            padding:30px 0px;
+        }
+        div.inputs{
+            label{
+                margin-right: 10px;
+            }
+            input{
+                display: inline-block;
+            }
+        }
+    }
+    div.consult_board{
+        ul{
+            width: 100%;
+            li{
+                box-sizing: border-box;;
+                border-bottom: 1px solid #d0d0d0;;
+                border-right: 1px solid #d0d0d0;;
+                border-left: 1px solid #d0d0d0;;
+             
+                &>div{
+                    display: inline-block;
+                    padding: 15px 0px;
+                }
+                div:nth-child(1){
+                    background-color: #f9fafc;
+                    width: 15%;
+                    height: 100%;
+                    text-align: center;
+                    @media (max-width:767px) {
+                        width: 40%;
+                    }
+
+                }
+                div:nth-child(2){
+                   width: 80%;
+                   @media (max-width:767px) {
+                    width: 55%;
+                    }
+                    input{
+                        display: block;
+                        border: 0;
+                        height: 100%;
+                        width: 100%;
+                        &:focus{
+                            background-color: #fff;
+                        }
+                    }
+                
+                }
+                textarea{
+                    width: 100%;
+                    margin: 0px auto;
+                    height: 300px;
+                    display: block;;
+                    padding: 20px;
+                    box-sizing: border-box;
+                    border: 0px;
+                    resize: none;
+                    &:focus{
+                        background-color: #fff;
+                    }
+                }
+            }
+        }   
+    }
+    div.foot{
+        padding: 20px 10px;
+        border-bottom: 2px solid #999;
+        .custom-file-input:lang(en) ~ .custom-file-label::after {
+            content: '이미지 선택';
+          }
+        p{
+            width: 45%;
+            display: inline-block;
+            margin: 5px;
+            label{
+                font-size: 0.875rem;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+            input{
+                display: inline;
+                vertical-align: middle;
+            }
+        }
+
+        img{
+            width: 20px;
+            @media (max-width:375px) {
+                width: 15px;
+                
+            }
+        }
+
+        span,a{
+            font-size: 0.875rem;
+            margin: 0px 10px;
+        }
+        svg{
+            width: 15px;
+            vertical-align: text-top;
+
+        }
+    }
+}
