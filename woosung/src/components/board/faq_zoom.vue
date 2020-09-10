@@ -31,13 +31,28 @@
 <script>
     export default {
         props: ['idx', 'data'],
+        metaInfo() {
+            return {
+                title: '우성소프트',
+                titleTemplate: `%s | ${this.board.tit}`, // title 뒤에 붙일 공통된 이름 (주로 사이트이름) 
+                meta: [{
+                        name: 'description',
+                        content: `${this.board.tit}`
+                    },
+                    {
+                        name: 'keyword',
+                        content: `PLS, pls 판매기록, 우성소프트,우성컴퓨터, 지도, 작물보호제, 기업 역량, 회사 연혁`
+                    },
+                ],
+            }
+        },
         data() {
             return {
                 test: '',
                 board: {
                     no: 0,
                     cate: '',
-                    title: "",
+                    tit: "",
                     desc: "",
                     date: ''
                 }

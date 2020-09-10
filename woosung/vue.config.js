@@ -15,7 +15,12 @@ const productionPlugins = [
         '/information/info2',
         '/information/info3',
         '/information/info4',
-        '/information/info4/zoom'
+        '/information/info4/zoom',
+        '/board',
+        '/board/faq',
+        '/board/zoomfaq/33',
+        '/board/support',
+        '/board/zoom/12',
 
     ],
     renderer: new PrerenderSpaPlugin.PuppeteerRenderer({
@@ -47,7 +52,12 @@ module.exports = {
         '/information/info2',
         '/information/info3',
         '/information/info4',
-        '/information/info4/zoom'
+        '/information/info4/zoom',
+        '/board',
+        '/board/faq',
+        '/board/zoomfaq/33',
+        '/board/support',
+        '/board/zoom/12',
       ],
       useRenderEvent: true,
       headless: true,
