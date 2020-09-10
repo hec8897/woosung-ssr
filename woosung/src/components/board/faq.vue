@@ -27,7 +27,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <router-link tag='tr' v-bind:to="'zoomfaq/'+filter.idx" v-for="(filter,i) in filters"
+                    <router-link tag='tr' v-bind:to="'/board/zoomfaq/'+filter.idx" v-for="(filter,i) in filters"
                         v-if='i < limit && i >= limit-Standard' :key='i'>
                         <td>{{i+1}}</td>
                         <td>

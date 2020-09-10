@@ -1,8 +1,6 @@
 <template>
     <div class='support'>
-        <div class='board_head'>
-            <h3>고객지원센터</h3>
-        </div>
+
         <section class='section1 zoom'>
             <div class='wrap'>
                 <h2>자주 묻는 질문</h2>
