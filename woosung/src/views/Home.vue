@@ -74,6 +74,7 @@ export default {
           농약허용물질목록관리제도, 농약허용기준강화제도, 농촌진흥청, 농진청, 농약판매업, 농약판매관리, 농약재고관리`},
           {name: 'description', content:`PLS 판매기록 우성소프트 우성컴퓨터, 농약안전정보시스템 연동, 농자재판매상 전용 판매관리프로그램, 포스 시스템 구축 , PLS 농약검색`},
           {property: 'og:title', content: '우성소프트', vmid: 'og:title'},
+          {property: 'og:description', content: 'PLS 판매기록, 농자재판매상 전용 판매관리프로그램 포스 시스템 구축', vmid: 'og:description'},
           {property: 'og:type', content: 'website', vmid: 'og:type'},
           {property: 'og:url', content: 'http://www.wssw.kr', vmid: 'og:url'},
           {property: 'og:image', content: 'http://www.wssw.kr/og.jpg', vmid: 'og:image'},
