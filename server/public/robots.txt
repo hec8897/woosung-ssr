@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /your-javascript-url
 Allow: /your-css-url
+
+DaumWebMasterTool:ead8f77cb925eb2b40c9f8165f98e4011327f7082f922d7bb3ee140a45909c0f:o0L+zAizlSgyOKCCT0cRvw==
