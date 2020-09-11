@@ -113,6 +113,10 @@ div.inner_2.banner {
             font-weight: bold;
             font-size: 1.35rem;
             top: 0;
+            @media (max-width:1024px) {
+                text-align: center;
+                
+            }
         }
     }
 }

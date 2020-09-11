@@ -1,5 +1,5 @@
 <template>
-<div class='popup'>
+<div class='popup contact'>
         <div class='contact_box'>
             <h2>상담 신청</h2>
             <input type='text' v-model="InsertData.write" placeholder="신청자"/>
@@ -57,8 +57,10 @@ export default {
                 desc:"",
                 status:"상담 신청",
                 tit:"위젯 온라인 상담 신청",
-                private:1,
-                password:'woosung'
+                private:true,
+                password:'woosung',
+                date:this.$moment().format('YYYY-MM-DD')
+
             }
         }
     },
@@ -78,13 +80,13 @@ export default {
             }
             else{
                 
-                const BaseData = `http://ec2-13-124-19-117.ap-northeast-2.compute.amazonaws.com/admin/api/qna/new`;
+                const BaseData = `http://ec2-13-124-19-117.ap-northeast-2.compute.amazonaws.com/admin/api/qna/new`
+
                 
                 this.$Axios.post(BaseData,this.InsertData)
                 .then((result)=>{
-                    if(result.data.phpResult == 'ok'){
+                    if(result.data.query == 'ok'){
                         alert('접수되었습니다.')
-                        this.$emit("child",false)
                     }
                 })
             }
@@ -96,32 +98,20 @@ export default {
 <style lang="scss">
 @import '@/assets/mixin.scss';
 
-div.popup{
-    div.inner{
-        width: 700px;
-        height: 700px;
-        background-color: #fff;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-        iframe{
-            width: 100%;
-            height: 80%;
-            overflow-x: hidden;
-        }
-
-    }
+div.popup.contact{
     div.contact_box{
         width: 100%;
-        max-width: 1024px;
-        height: 60vh;
+        height: 75vh;
         background-color: #fff;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
         z-index: 999;
+        h2{
+            text-align: left;
+            margin-bottom: 20px;
+        }
         @media (max-width:1024px) {
             max-width: 90%;
         }
@@ -141,11 +131,21 @@ div.popup{
             padding: 30px 20px;
             height: 90vh;
         }
+        p{
+            text-align: left;
+        }
+        div.p_box{
+            height: 40%;
+            @media (max-width: 1024px) {
+                height: 30%;
+            }
+        }
 
         input,select{
             width: 100%;
             margin-bottom: 10px;
             font-size: 0.75rem;
+            box-sizing: border-box;
             &::placeholder{
                 font-size: 0.75rem;
             }
@@ -153,15 +153,17 @@ div.popup{
      
         div.checkbox{
             margin-top: 20px;
+            text-align: left;
         
             input{
                 width: 20px;
                 height: 20px;
                 display: inline;
-                vertical-align: middle;
             }
             label{
                 cursor: pointer;
+                vertical-align: top;
+                margin-left: 20px;
             }
         }
         div.btns{
@@ -174,6 +176,7 @@ div.popup{
                 width: 100%;
                 margin-bottom: 10px;
                 margin-top: 0px;
+                    text-align: center!important;
                 &.t_red{
                     background-color: $redPoint;
                     color: white;

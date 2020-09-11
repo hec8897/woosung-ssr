@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss">
 div.popup{
-    div.farm_popup,div.contact_box{
+    div.farm_popup{
         width: 100%;
         max-width: 1024px;
         height: 60vh;

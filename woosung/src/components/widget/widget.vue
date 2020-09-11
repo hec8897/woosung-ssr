@@ -12,7 +12,7 @@
          <img src="@/assets/image/consulting.png"/>
          <p>원격 지원</p></a>
      </div>
-     <div class='teamviewer'>
+     <div class='teamviewer' @click="openPopup">
          <img src="@/assets/image/consult.png"/>
          <p><a href="tel:02-6959-8161" >상담신청</a></p>
      </div>
@@ -24,7 +24,10 @@
                  <p><a href="tel:1544-6301">1544-6301</a></p>
             </div>
      </div>
-     <ContactModal v-if='false'/>
+     <ContactModal 
+     v-if='show'
+     @child="PopupClose"
+     />
  </div>
 
 </template>
@@ -33,9 +36,6 @@
 import ContactModal from '@/components/modal/modal-contact'
 export default {
     components:{ContactModal},
-    created(){
-        console.log(1)
-    },
     data(){
         return{
             show:false
@@ -43,8 +43,10 @@ export default {
     },
     methods: {
      openPopup(){
-         this.show = true
-         console.log(this.show)
+        return this.show = true
+     },
+     PopupClose(data){
+        return this.show = data
      }
  }, 
     
@@ -108,6 +110,8 @@ div.widget{
         border: 0px;
         border-top: 1px solid #d0d0d0;
         padding: 5px 10px;
+        display: flex;
+        flex-direction: row;
 
     }
     &>div{
@@ -119,17 +123,12 @@ div.widget{
         vertical-align: top;
     
         @media (max-width:1200px) {
-            display: inline-block;
-            width: 32%;
-            box-sizing: border-box;
+            flex: 1;
             border: 0px;
-            margin-bottom: 5px;
-            padding: 5px 0px;
             &:nth-child(2){
                 display: none;
             }
         }
-
         img{
             max-width: 40px;
         }

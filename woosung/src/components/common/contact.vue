@@ -62,7 +62,9 @@ export default {
                 status:"상담 신청",
                 tit:"온라인 상담 신청",
                 private:1,
-                password:'woosung'
+                password:'woosung',
+                date:this.$moment().format('YYYY-MM-DD')
+
             }
         }
     },
@@ -79,11 +81,14 @@ export default {
             }
             else{
                 
-                // const BaseData = "../woosung_api/qna.create.php";
+                const BaseData = `http://ec2-13-124-19-117.ap-northeast-2.compute.amazonaws.com/admin/api/qna/new`
                 
                 this.$Axios.post(BaseData,this.InsertData)
                 .then((result)=>{
-                    if(result.data.phpResult == 'ok'){
+                    console.log(result.data.query)
+
+                    if(result.data.query == 'ok'){
+
                         alert('접수되었습니다.')
                     }
                 })
@@ -130,27 +135,7 @@ section.consult_section{
                 cursor: pointer;
             }
         }
-        div.p_box{
-            width: 100%;
-            height: 150px;
-            border: 2px solid #d9d9d9;
-            background: #f9f9f9;
-            padding: 20px;
-            box-sizing: border-box;
-            overflow: hidden;
-            overflow-y: scroll;
-            font-size: 15px;
-                ol{
-                    list-style: decimal;
-                    margin-left: 10px;
-                    text-align: left;
-                    li{
-                        font-size: 14px;
-                        line-height: 20px;
-                        margin-bottom: 10px;
-                    }
-                }
-        }
+
     }
     div.btn{
         padding: 15px 50px;
