@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["product"],{d2f1:function(t,e,n){"use strict";n.r(e);var u=function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"about"},[n("router-view")],1)},r=[],s=n("2877"),a={},c=Object(s["a"])(a,u,r,!1,null,null,null);e["default"]=c.exports}}]);
+//# sourceMappingURL=product.885d09ca.js.map
