@@ -5,6 +5,7 @@ const PrerenderSpaPlugin = require('prerender-spa-plugin');
 const productionPlugins = [
   new PrerenderSpaPlugin({
     staticDir: path.join(__dirname, 'dist'),
+    outputDir: path.join(__dirname, '../server/public/cafe'),
     routes: [
         "/",
         "/about",
