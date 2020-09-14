@@ -5,7 +5,7 @@ const PrerenderSpaPlugin = require('prerender-spa-plugin');
 const productionPlugins = [
   new PrerenderSpaPlugin({
     staticDir: path.join(__dirname, 'dist'),
-    outputDir: path.join(__dirname, '../server/public/cafe'),
+    outputDir: path.join('../server/public/cafe'),
     routes: [
         "/",
         "/about",
@@ -22,7 +22,7 @@ const productionPlugins = [
         '/board/faq',
         '/board/zoomfaq/33',
         '/board/support',
-        '/board/zoom/12',
+        '/board/zoom/12',   
 
     ],
     renderer: new PrerenderSpaPlugin.PuppeteerRenderer({
