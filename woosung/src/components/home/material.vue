@@ -4,27 +4,36 @@
         <h2>농자재 정보
             <router-link tag='span' to="information/info4" class='more'><b>더보기</b> +</router-link>
         </h2>
-        <div class='news_photo'>
-            <Carousel 
+        <ul>
+            <router-link tag='li' v-for='list in lists' :key='list.idx' v-bind:to="'information/info4/zoom/'+list.idx">
+                <div class='inner'>
+                    <img v-bind:src="list.img">
+                </div>
+                <div class='text'>
+                    <p>{{list.company}}</p>
+                    <h4>{{list.name}}</h4>
+                    <!-- <p> {{list.exp}}</p> -->
+
+                </div>
+
+            </router-link>
+        </ul>
+            <!-- <Carousel 
             :navigationEnabled="false" 
-            :per-page="3" 
+            :per-page-custom=[[1024,3],[768,3],[540,3]]
             :loop="true">
 
-                <slide v-for='list in lists' :key='list.idx'>
-                    <div class='photos'>
-                        <router-link tag='div' class='inner_ma' v-bind:to="'information/info4/zoom/'+list.idx">
-                            <div class='photo'>
-                                <img v-bind:src="list.img">
-                            </div>
-                            <h4>{{list.name}}</h4>
-                            <p> {{list.exp}}</p>
+                <slide v-for='list in lists' :key='list.idx'> -->
+                        <!-- <router-link tag='div' class='inner_ma' v-bind:to="'information/info4/zoom/'+list.idx"> -->
+                        <!-- <div class='inner'>
+                        <img v-bind:src="list.img">
+                        </div>
+                        <h4>{{list.name}}</h4> -->
+                        <!-- <p> {{list.exp}}</p> -->
+                        <!-- </router-link> -->
+                <!-- </slide>
 
-                        </router-link>
-                    </div>
-                </slide>
-
-            </Carousel>
-        </div>
+            </Carousel> -->
     </div>
 </template>
 <script>
@@ -46,7 +55,7 @@ created() {
         let GetList = result.data.result.filter((x)=>{
             return x.active == 1
         })
-        this.lists = GetList.slice(0,9)
+        this.lists = GetList.slice(0,3)
     })
     
 },
@@ -56,9 +65,39 @@ created() {
 <style lang="scss">
     @import '@/assets/define.scss';
     div.news_info {
-        margin-left: 5%;
         @media (max-width:1024px) {
             margin: 0 auto;
+        }
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            li{
+                flex: 1 1 20px;
+                margin: 5px;
+                text-align: center;
+                margin-top: 10px;
+                border: 1px solid #d0d0d0;
+                img{
+                    display: inline;
+                    width: auto;
+                    height: 100px;
+                    padding: 10px 0px;
+                }
+                div.text{
+                    border-top: 1px solid #d0d0d0;
+                    padding: 10px 0px;
+                    background-color: rgba(0, 0, 0, .03);
+                    h4{
+                        font-size: 0.875rem;
+                        font-weight: bold;
+                    }
+                    p{
+                        margin-bottom: 3px;
+                        font-size: 0.75rem;
+                    }
+                }
+            }
         }
 
         div.news_photo {
@@ -74,58 +113,26 @@ created() {
                 display: none;
             }
 
-            div.photos {
-                padding: 5px;
-                box-sizing: border-box;
-                vertical-align: middle;
-                text-align: center;
-                cursor: pointer;
-
-                img {
-                    margin-top: 5px;
-                    width: auto;
-                    max-height: 90px;
-                }
 
 
-                div.inner_ma {
-                    div.photo {
-                        width: 100%;
-                        min-height: 100px;
-                        height: auto;
-                        background-color: $lightgray;
-                        overflow: hidden;
-                        border: 1px solid #d0d0d0;
 
-                        @media (max-width:767px) {
-                            height: auto;
-                        }
-                    }
-
-                    h4 {
-                        margin: 10px 0px;
-                        text-align: center;
-                    }
-
-                    p {
-                        height: 50px;
-                        overflow: hidden;
-                        text-align: left;
-                        font-size: 0.75rem;
-                        text-align: center;
-
-                        @media (max-width:767px) {
-                            height: auto;
-                        }
-                    }
-
-                    b {
-                        font-style: 0.6rem;
-                    }
-
-                }
-            }
         }
+        
+                div.inner_ma {
+                    text-align: center;
+                    img{
+                        max-width: 50px;
+                    }
+                    
+                // img {
+                //     margin-top: 5px;
+                //     width: auto;
+                //     max-height: 90px;
+                // }
+
+         
+
+            }
 
     }
 </style>

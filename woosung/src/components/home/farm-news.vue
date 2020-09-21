@@ -4,8 +4,11 @@
             <h2>농업계 소식<router-link tag='span' class='more' to='/information/info2'><b>더보기</b> +</router-link>
             </h2>
             <div class='items'>
-                <carousel :navigationEnabled="true" :navigationPrevLabel="prevBtn" :navigationNextLabel="nextBtn"
-                    :loop='true' :per-page-custom=[[1024,4],[768,3],[540,2]]>
+                <carousel :navigationEnabled="true" 
+                :navigationPrevLabel="prevBtn" 
+                :navigationNextLabel="nextBtn"
+                    :loop='true' 
+                    :per-page-custom=[[1024,4],[768,3],[540,2]]>
                     <slide v-for="(content,i) in contents" :key='i'>
                         <div class='slide_inner' @click="popupBoxShow(content)">
                             <div>
@@ -87,7 +90,6 @@
         div.slide_inner {
             cursor: pointer;
             margin: 10px;
-            overflow: hidden;
             box-sizing: border-box;
             border-radius: 3px;
             transition: .1s ease-in-out;

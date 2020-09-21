@@ -150,15 +150,15 @@
         .wrap {
           display: flex;
           flex-direction: row;
+            justify-content: space-between;
 
           @media (max-width: 1024px) {
             display: block;
           }
 
           div.content {
-            flex: 1 1 45%;
-            justify-content: space-between;
-            margin-right: 50px;
+            // flex: 1 1 45%;
+            width: 48%;
             
             h2 {
               border-bottom: 1px solid #d0d0d0;
@@ -168,7 +168,6 @@
             }
 
             &.content1 {
-              margin-right: 3%;
 
               @media (max-width: 1024px) {
                 width: 95%;
@@ -179,7 +178,6 @@
             }
 
             &.content2 {
-              margin-left: 3%;
 
               @media (max-width: 1024px) {
                 width: 95%;
