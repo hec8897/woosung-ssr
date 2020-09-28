@@ -1,13 +1,11 @@
 <template>
   <div id="app">
+    
     <AppHeader />
     <router-view />
     <AppWidget />
     <AppFooter />
-    <Adsense
-    data-ad-client="ca-pub-3666966640936806"
-    data-ad-slot="1234567890">
-</Adsense>
+
   </div>
 </template>
 <script>

@@ -4,13 +4,7 @@ import router from './router'
 import App from './App.vue'
 import VueCarousel from 'vue-carousel';
 import listNumber from '@/components/common/listNumber.vue'
-import Ads from 'vue-google-adsense'
 
-Vue.use(require('vue-script2'))
-
-Vue.use(Ads.Adsense)
-Vue.use(Ads.InArticleAdsense)
-Vue.use(Ads.InFeedAdsense)
 
 Vue.config.productionTip = false
 
