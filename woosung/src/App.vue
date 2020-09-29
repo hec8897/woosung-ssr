@@ -4,6 +4,12 @@
     <AppHeader />
     <router-view />
     <AppWidget />
+<Adsense
+    data-ad-client="ca-pub-3666966640936806"
+    ins-style="{position: fixed; z-index:999; width:200px; height:200px; top:0px left:10%; top:10%;} "
+    data-ad-slot="1234567890">
+</Adsense>
+
     <AppFooter />
 
   </div>
