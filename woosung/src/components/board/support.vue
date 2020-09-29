@@ -18,7 +18,7 @@
                         <router-link v-bind:to="'zoom/'+board.idx" tag='tr' v-for='(board,i) in boards'
                             v-if='i < limit && i >= limit-Standard' :key='i'>
                             <td>{{i+1}}</td>
-                            <td>{{board.cate}}</td>
+                            <td>{{board.cate | CateFilter}}</td>
                             <td>{{board.title}}
                             </td>
                             <td>
@@ -36,6 +36,25 @@
 
 <script>
     export default {
+        filters:{
+            CateFilter(value){
+                if(value == 'info'){
+                    return '공지사항'
+                }
+                else if(value == 'notice'){
+                    return '정보'
+                }
+                else if(value == 'update'){
+                    return '업데이트'
+                }
+                else if(value == 'error'){
+                    return '장애'
+                }
+                else{
+                    return value
+                }
+            }
+        },
         metaInfo() {
             return {
                 title: '우성소프트',
@@ -69,7 +88,9 @@
             const BaseData = "http://ec2-13-124-19-117.ap-northeast-2.compute.amazonaws.com/admin/api/support"
             this.$Axios.get(BaseData)
                 .then((result) => {
-                    this.boards = result.data.result;
+                    this.boards = result.data.result.filter((x)=>{
+                        return x.cate != 'cafe'
+                    });
                 })
         },
         methods: {

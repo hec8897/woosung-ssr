@@ -30,7 +30,7 @@
             this.$Axios.get(BaseData)
                 .then((result) => {
                     let DataResult = result.data.result.filter((x) => {
-                        return x.active == 1 && x.fixed == 1
+                        return x.active == 1 && x.fixed == 1 && x.cate!='cafe'
                     });
                     this.notices = DataResult.slice(0,5)
                 })
