@@ -72,7 +72,7 @@ export default {
    metaInfo(){
       return{
         title:'우성소프트',
-        titleTemplate: `%s | pls 판매제고 프로그램의 기준`, // title 뒤에 붙일 공통된 이름 (주로 사이트이름) 
+        titleTemplate: `%s | pls 판매재고 프로그램의 기준`, // title 뒤에 붙일 공통된 이름 (주로 사이트이름) 
         meta:[
           {name: 'description', content:`30년전 우성소프트의 사명(社名)은 우성의 프로그램을 사용하는 모든 고객의 성공을 염원하며 만들어 졌습니다. 30년간 1000개가 넘는 고객사의 선택과 만족, 신뢰를 원동력으로 고객의 성공이 회사의 사명(使命)이 되었습니다.`},
           {name: 'keyword', content:`PLS, pls 판매기록, 우성소프트,우성컴퓨터, 지도, 작물보호제, 기업 역량, 회사 연혁`},
