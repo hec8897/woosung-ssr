@@ -61,7 +61,7 @@
         },
         created() {
             let idx = this.idx;
-            const BaseData = `http://ec2-13-124-19-117.ap-northeast-2.compute.amazonaws.com/admin/api/support/${idx}`
+            const BaseData = `http://13.124.215.190/admin/api/support/${idx}`
             this.$Axios.post(BaseData, {
                     idx
                 })
@@ -71,7 +71,7 @@
                     if (this.board.files != null) return this.files = this.board.files.split(',');
 
                     this.$Axios.post(
-                        'http://ec2-13-124-19-117.ap-northeast-2.compute.amazonaws.com/admin/api/support/join', {
+                        'http://13.124.215.190/admin/api/support/join', {
                             idx,
                             join: this.board.join + 1
                         })

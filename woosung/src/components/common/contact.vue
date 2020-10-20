@@ -81,7 +81,7 @@ export default {
             }
             else{
                 
-                const BaseData = `http://ec2-13-124-19-117.ap-northeast-2.compute.amazonaws.com/admin/api/qna/new`
+                const BaseData = `http://13.124.215.190/admin/api/qna/new`
                 
                 this.$Axios.post(BaseData,this.InsertData)
                 .then((result)=>{

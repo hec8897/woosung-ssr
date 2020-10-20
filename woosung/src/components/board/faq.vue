@@ -95,7 +95,7 @@
             }
         },
         created() {
-            const BaseData = "http://ec2-13-124-19-117.ap-northeast-2.compute.amazonaws.com/admin/api/faq"
+            const BaseData = "http://13.124.215.190/admin/api/faq"
             this.$Axios.get(BaseData)
                 .then((result) => {
                     this.faqs = result.data.result;

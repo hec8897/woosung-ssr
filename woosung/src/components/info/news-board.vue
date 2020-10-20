@@ -60,7 +60,7 @@
         },
         created() {
 
-            const BaseData = "http://ec2-13-124-19-117.ap-northeast-2.compute.amazonaws.com/admin/api/farm_data"
+            const BaseData = "http://13.124.215.190/admin/api/farm_data"
             this.$Axios.get(BaseData)
                 .then((result) => {
                     this.contents = result.data.result.filter((x) => {

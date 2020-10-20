@@ -62,7 +62,7 @@ export default {
         }
       },
       created() {
-        const BaseData = "http://ec2-13-124-19-117.ap-northeast-2.compute.amazonaws.com/admin/api/youtube_data"
+        const BaseData = "http://13.124.215.190/admin/api/youtube_data"
         this.$Axios.get(BaseData,{mode:'page'})
         .then((result)=>{
             let getData = result.data.result.filter((x)=>{

@@ -42,7 +42,7 @@
             }
         },
         created() {
-            this.$Axios.post('http://ec2-13-124-19-117.ap-northeast-2.compute.amazonaws.com/admin/api/farm_item/zoom', {
+            this.$Axios.post('http://13.124.215.190/admin/api/farm_item/zoom', {
                     idx: this.idx
                 })
                 .then((result) => {
@@ -50,7 +50,7 @@
                     //데이터 업데이트
 
                     this.$Axios.post(
-                        'http://ec2-13-124-19-117.ap-northeast-2.compute.amazonaws.com/admin/api/farm_item/join', {
+                        'http://13.124.215.190/admin/api/farm_item/join', {
                             idx: this.content.idx,
                             join: this.content.join + 1
                         })

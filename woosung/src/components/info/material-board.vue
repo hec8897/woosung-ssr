@@ -82,7 +82,7 @@ export default {
     },
     
     created() {
-        this.$Axios.get('http://ec2-13-124-19-117.ap-northeast-2.compute.amazonaws.com/admin/api/farm_item')
+        this.$Axios.get('http://13.124.215.190/admin/api/farm_item')
         .then((result)=>{
 
             let Lists = result.data.result.filter((x)=>{
