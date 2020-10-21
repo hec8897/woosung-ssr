@@ -1,12 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import axios from 'axios'
-import VueMoment from 'vue-moment';
-import '@/assets/define.scss';
-
-Vue.prototype.$Axios = axios;
-Vue.use(VueMoment);
-
 
 Vue.use(VueRouter)
 
